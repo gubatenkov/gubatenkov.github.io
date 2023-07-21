@@ -14,7 +14,8 @@ const MobileMenu: FC<{ items: Menu }> = ({ items }) => {
           <Popover.Button
             className={`${
               open ? 'open' : 'closed'
-            } group relative z-20 ml-auto flex h-auto w-10 flex-col justify-between gap-1 rounded-full bg-zinc-100/80 px-3 py-[0.8125rem] shadow-sm shadow-violet-100/50 ring-1 ring-zinc-900/[0.05] md:hidden`}
+            } header-toggle-btn group relative z-20 ml-auto flex h-auto w-10 flex-col justify-between gap-1 rounded-full bg-zinc-100/80 px-3 py-[0.8125rem] shadow-sm shadow-violet-100/50 outline-none ring-1 ring-zinc-900/[0.05] focus:outline-violet-800 md:hidden`}
+            tabIndex={0}
           >
             <span className="hamburger-line-1" />
             <span className="hamburger-line-2" />
@@ -28,7 +29,7 @@ const MobileMenu: FC<{ items: Menu }> = ({ items }) => {
             enterTo="opacity-100 translate-y-0"
             as={Fragment}
           >
-            <Popover.Panel className="absolute z-20 mx-auto mt-4 w-full rounded-2xl bg-zinc-50 px-4 py-7 shadow-xl shadow-sky-100/40">
+            <Popover.Panel className="absolute z-20 mx-auto mt-4 w-full rounded-2xl bg-zinc-50 px-4 py-7 shadow-xl shadow-violet-100/40">
               <ul className="flex flex-col">
                 {items.map(({ isActive, text, id, ...props }) =>
                   isActive ? (

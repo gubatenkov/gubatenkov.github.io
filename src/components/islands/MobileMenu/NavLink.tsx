@@ -11,7 +11,7 @@ const NavLink: FC<Props> = ({ children, badge, url }) => {
   return (
     <li>
       <a
-        className="flex items-center rounded-lg p-2 text-base font-semibold leading-7 text-zinc-700 outline-violet-800"
+        className="flex items-center rounded-lg p-2 text-base font-semibold leading-7 text-zinc-700 outline-none focus:outline-violet-800"
         href={url}
       >
         {children}

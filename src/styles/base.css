@@ -1,7 +1,8 @@
 @tailwind base;
 
 @layer base {
-  * {
+  *:focus,
+  *:focus-visible {
     outline-color: #5b21b6;
   }
 
