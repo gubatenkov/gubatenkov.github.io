@@ -17,6 +17,11 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+        ASTRO_CTA_URL: ${{ secrets.ASTRO_CTA_URL }}
+        ASTRO_DOWNLOAD_CV_URL: ${{ secrets.ASTRO_DOWNLOAD_CV_URL }}
+        ASTRO_CONTACT_FORM_API: ${{ secrets.ASTRO_CONTACT_FORM_API }}
+        ASTRO_SUBSCRIBE_FORM_API: ${{ secrets.ASTRO_SUBSCRIBE_FORM_API }}
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
