@@ -1,0 +1,60 @@
+---
+import LinkedInFilledIcon from '@/components/icons/LinkedInFilledIcon'
+import Diagonales from '@/components/elements/Diagonales'
+import Rectangle from '@/components/elements/Rectangle'
+import { Picture } from 'astro-imagetools/components'
+---
+
+<section
+  class="overflow-hidden bg-zinc-50 pb-28 pt-16 sm:pb-40 sm:pt-24 lg:pt-32"
+>
+  <div
+    class="wrapper flex flex-col items-center gap-16 sm:gap-20 lg:flex-row lg:gap-8"
+  >
+    <div class="mx-auto w-full max-w-2xl">
+      <h2 class="mb-6">A tour of my gadgets and workplace</h2>
+      <p class="mb-10 mr-auto max-w-lg text-lg leading-8">
+        In the future, I plan to add a short review of my workspace and devices
+        for development. In the meantime, you can follow me on social media so
+        you don't miss the event
+      </p>
+      <a
+        class="btn inline-flex items-center gap-3 bg-zinc-200 hover:bg-zinc-200/60 focus:outline-zinc-200"
+        href="#_"
+      >
+        <LinkedInFilledIcon
+          className="w-5 h-5 text-blue-500 -translate-y-[0.07rem]"
+        />
+        <span class="leading-[1]">Follow on LinkedIn</span>
+      </a>
+    </div>
+    <div class="w-full">
+      <div class="relative aspect-square max-w-xl sm:mx-auto lg:aspect-[4/3.5]">
+        <Rectangle
+          className="absolute left-0 top-8 scale-75 lg:scale-100 lg:-left-4 lg:top-11"
+        />
+        <Diagonales
+          className="absolute right-[-5rem] w-[11rem] h-[11rem] bottom-[calc(30%+1rem)] translate-y-[50%] lg:bottom-[calc(25%)]"
+        />
+        <div
+          class="ml-auto aspect-[6/5] w-full max-w-[80%] overflow-hidden rounded-2xl"
+        >
+          <Picture
+            alt="Workspace with few displays"
+            src="/images/about/displays.jpg"
+            layout="fill"
+          />
+        </div>
+        <div
+          class="absolute bottom-0 aspect-square w-full max-w-[50%] overflow-hidden rounded-2xl"
+        >
+          <Picture
+            src="/images/about/keyboard.jpg"
+            alt="Keyboard on the workspace"
+            layout="fill"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

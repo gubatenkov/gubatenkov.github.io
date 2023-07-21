@@ -1,0 +1,15 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+type Props = HTMLAttributes<'a'>
+const { class: classes, ...props }: Props = Astro.props
+---
+
+<a
+  class={`icon-link ${classes}`}
+  rel="noopener noreferrer"
+  target="_blank"
+  role="link"
+  {...props}
+>
+  <slot />
+</a>

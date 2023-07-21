@@ -1,0 +1,33 @@
+---
+import type { CareerItem } from '@/data'
+
+export type Props = CareerItem
+const { additionalText, workingPeriod, companyName, logoPath } = Astro.props
+---
+
+<li
+  class="relative text-left [counter-increment:section] before:absolute before:-top-7 before:right-0 before:block before:font-mono before:text-[8rem] before:font-black before:leading-[1] before:text-zinc-100 before:[content:counter(section,decimal-leading-zero)]"
+>
+  <div
+    class="mb-6 flex h-11 w-11 items-center justify-center rounded-lg bg-zinc-100 ring-1 ring-zinc-100"
+  >
+    <div class="h-5 w-5">
+      <img
+        alt={`Logo of ${companyName}`}
+        class="h-full w-full"
+        decoding="async"
+        src={logoPath}
+        loading="lazy"
+      />
+    </div>
+  </div>
+  <p class="mb-2 font-lexend text-lg font-semibold text-zinc-900">
+    {companyName}
+  </p>
+  <p class="mb-1 text-sm font-medium leading-5 text-violet-700">
+    {workingPeriod}
+  </p>
+  <p>
+    {additionalText}
+  </p>
+</li>

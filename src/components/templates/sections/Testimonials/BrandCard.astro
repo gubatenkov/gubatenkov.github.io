@@ -1,0 +1,17 @@
+---
+import type { TBrand } from '@/data'
+type Props = TBrand
+const { logoPath, name }: TBrand = Astro.props
+---
+
+<li
+  class="flex items-center justify-center overflow-hidden rounded-xl border border-zinc-200/90 py-7 shadow-sm shadow-zinc-100/50 transition-shadow duration-200 hover:shadow-sm"
+>
+  <img
+    class="h-11 w-40"
+    decoding="async"
+    src={logoPath}
+    loading="lazy"
+    alt={name}
+  />
+</li>

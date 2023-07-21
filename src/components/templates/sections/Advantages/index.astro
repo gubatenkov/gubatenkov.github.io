@@ -1,0 +1,84 @@
+---
+import RoundedText from '@/components/elements/RoundedText'
+import DownloadIcon from '@/components/icons/DownloadIcon'
+import Underline from '@/components/elements/Underline'
+import { Picture } from 'astro-imagetools/components'
+import { advantagesData as data } from '@/data'
+import Arrow from '@/components/elements/Arrow'
+import Star from '@/components/elements/Star'
+
+import AdvantagesItem from './AdvantagesItem.astro'
+---
+
+<section
+  class="bg-gradient-to-b from-zinc-50 to-white pb-32 pt-20 sm:pb-20 sm:pt-24 md:pb-36 md:pt-28 lg:pb-64 lg:pt-32"
+>
+  <div class="wrapper">
+    <h2 class="mx-auto mb-20 w-full max-w-2xl text-center lg:mb-24">
+      <span class="relative inline-block text-violet-800">
+        Experienced
+        <Underline
+          className="absolute bottom-[-0.75rem] left-0 z-[-1] w-full text-violet-200/75 ring-0"
+        />{' '}
+      </span>
+      developer is the best project investment
+    </h2>
+    <div
+      class="mx-auto grid max-w-lg gap-4 lg:mx-[unset] lg:max-w-none lg:grid-cols-[0.9fr_1.4fr] lg:gap-28"
+    >
+      <div class="relative">
+        <ul class="flex flex-col">
+          {
+            data.map((itemProps, idx) => (
+              <li class="pb-16 lg:last:pb-0">
+                <AdvantagesItem
+                  {...itemProps}
+                  isLast={idx === data.length - 1}
+                />
+              </li>
+            ))
+          }
+        </ul>
+        <div class="absolute bottom-[-10rem] left-[6rem] hidden gap-6 lg:flex">
+          <Arrow className="h-20 w-20 text-zinc-600" />
+          <p
+            class="inline-block max-w-[14rem] -rotate-[12deg] font-gochi text-2xl text-zinc-600"
+          >
+            This is my personal advantages
+          </p>
+        </div>
+      </div>
+      <div class="relative aspect-[3/2] h-auto w-full">
+        <div class="overflow-hidden rounded-3xl">
+          <Picture
+            alt="Blank page on the table"
+            src="/images/home/paper.jpg"
+            layout="fullWidth"
+            quality={60}
+          />
+        </div>
+        <div
+          class="absolute-center absolute z-10 flex h-32 w-32 items-center justify-center rounded-full bg-white/50 backdrop-blur-sm lg:h-44 lg:w-44"
+        >
+        </div>
+        <RoundedText
+          className="absolute left-[calc(50%-3rem)] top-[calc(50%-3rem)] z-20 h-24 w-24 animate-[spin_12s_linear_infinite] text-zinc-900 lg:left-[calc(50%-4.5rem)] lg:top-[calc(50%-4.5rem)] lg:h-36 lg:w-36"
+        />
+        <a
+          class="absolute-center group absolute left-[50%] top-[50%] z-30 h-12 w-12 rounded-full bg-zinc-900 text-white outline outline-2 outline-offset-2 outline-transparent hover:bg-zinc-800 focus:outline-zinc-800 lg:h-20 lg:w-20"
+          href={import.meta.env.ASTRO_DOWNLOAD_CV_URL}
+          aria-label="Download Frontend Developer CV"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <DownloadIcon
+            className="group-focus:animate-pulse absolute-center absolute h-5 w-5 lg:h-7 lg:w-7 duration-200 ease-in-out"
+          />
+        </a>
+        <Star
+          className="absolute -top-4 right-4 z-30 -translate-y-8 translate-x-[32px] text-violet-400 lg:right-0 lg:top-0"
+        />
+      </div>
+    </div>
+  </div>
+</section>

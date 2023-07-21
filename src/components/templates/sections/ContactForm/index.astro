@@ -1,0 +1,94 @@
+---
+import TelegramIcon from '@/components/icons/TelegramIcon'
+import ContactForm from '@/components/forms/ContactForm'
+import ArrowSpin from '@/components/elements/ArrowSpin'
+import { Picture } from 'astro-imagetools/components'
+import MailIcon from '@/components/icons/MailIcon'
+---
+
+<section class="pt-16 sm:pt-24 lg:pt-32">
+  <div class="wrapper 2xl:px-0">
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 lg:gap-16 lg:pb-40 xl:grid-cols-[0.9fr_1.1fr] xl:gap-0"
+    >
+      <div class="relative mx-auto pb-16 sm:pb-24 md:max-w-2xl lg:p-0">
+        <span class="background-plane"></span>
+        <h1
+          class="mb-12 text-4xl !leading-[1.25] sm:mb-16 sm:text-5xl lg:text-[2.5rem] xl:text-5xl"
+        >
+          How can I help you? Let’s get in touch
+        </h1>
+        <div
+          class="mb-14 aspect-[3/2] overflow-hidden rounded-2xl sm:mb-20 xl:translate-x-16"
+        >
+          <Picture
+            src="/images/contact/contact.jpg"
+            alt="Men working in internet"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
+        </div>
+        <p
+          class="relative mb-16 max-w-[12rem] font-gochi text-2xl tracking-wide text-zinc-600 sm:mb-20 sm:max-w-[14rem] sm:-rotate-6 sm:text-[1.75rem]"
+        >
+          You can <span class="text-violet-700">reach me</span> at the following
+          <ArrowSpin
+            className="w-24 h-24 absolute -right-20 top-[calc(50%+2rem)] translate-y-[-50%] rotate-[30deg] text-zinc-600"
+          />
+        </p>
+        <div class="flex flex-col gap-8 xs:flex-row">
+          <div class="flex w-full gap-4">
+            <MailIcon className="w-5 h-5 text-violet-600" />
+            <div>
+              <p
+                class="mb-2 text-lg font-medium leading-5 text-zinc-900 sm:mb-3"
+              >
+                Send Email:
+              </p>
+              <a
+                href="mailto:s9379992g@gmail.com"
+                rel="noopener noreferrer"
+                class="text-violet-700"
+                target="_blank"
+              >
+                s9379992g@gmail.com
+              </a>
+            </div>
+          </div>
+          <div class="flex w-full gap-4">
+            <TelegramIcon className="w-5 h-5 text-violet-600" />
+            <div>
+              <p
+                class="mb-2 text-lg font-medium leading-5 text-zinc-900 sm:mb-3"
+              >
+                Direct Message:
+              </p>
+              <a
+                href="https://t.me/soko1enkov"
+                rel="noopener noreferrer"
+                class="text-violet-700"
+                target="_blank"
+              >
+                Telegram
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mx-auto max-w-lg pb-28 pt-16 sm:pb-40 sm:pt-24 lg:mx-0 lg:ml-auto lg:p-0"
+      >
+        <h2 class="mb-4 text-3xl text-zinc-900">
+          Fill out the form below to get started
+        </h2>
+        <p class="mb-10 text-lg text-zinc-600">
+          You can begin by describing the project you are currently working on
+        </p>
+        <ContactForm
+          apiRoute={import.meta.env.ASTRO_CONTACT_FORM_API}
+          client:visible
+        />
+      </div>
+    </div>
+  </div>
+</section>

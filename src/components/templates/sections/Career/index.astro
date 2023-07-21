@@ -1,0 +1,51 @@
+---
+import DownloadIcon from '@/components/icons/DownloadIcon'
+import ArrowSpin from '@/components/elements/ArrowSpin'
+import { career } from '@/data'
+
+import CareerListItem from './CareerListItem.astro'
+---
+
+<section class="pb-28 pt-16 sm:pt-24 lg:pb-40 lg:pt-32">
+  <div
+    class="wrapper grid max-w-[calc(42rem+4rem)] grid-cols-1 gap-16 lg:max-w-7xl lg:grid-cols-[1fr_2fr] lg:gap-8"
+  >
+    <div>
+      <h2 class="mb-6">
+        My career
+        <span class="decorator-underline text-violet-700">journey</span>
+        so far
+      </h2>
+      <p class="mb-10 text-lg">
+        I realized that my path was through frontend development because it
+        provides a good opportunities for people who interested in modern
+        technologies.
+      </p>
+      <a
+        class="btn inline-flex items-center gap-2 bg-zinc-100/80 text-zinc-900 shadow-sm shadow-violet-100/50 ring-1 ring-zinc-100 hover:bg-zinc-200/60 focus:ring-2 focus:ring-zinc-100/80 focus:ring-offset-2"
+        href={import.meta.env.ASTRO_DOWNLOAD_CV_URL}
+        aria-label="Download Frontend Developer CV"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <span>Download CV</span>
+        <DownloadIcon className="text-zinc-600 w-[1.125rem] h-[1.125rem]" />
+      </a>
+    </div>
+
+    <ol
+      class="grid grid-cols-1 gap-10 gap-y-10 [counter-reset:section] sm:grid-cols-2 lg:gap-8 lg:gap-y-16"
+    >
+      {career.map((careerItem) => <CareerListItem {...careerItem} />)}
+      <li class="flex items-center text-zinc-600 sm:flex-col sm:odd:hidden">
+        <span
+          class="w-full max-w-[12rem] translate-y-6 font-gochi text-2xl tracking-wide xs:max-w-[13rem] sm:max-w-[15rem] sm:translate-x-4 sm:-rotate-12 sm:text-[1.75rem]"
+          >I am currently here in my journey :D</span
+        >
+        <ArrowSpin
+          className="w-24 h-24 rotate-[150deg] -scale-x-100 sm:-rotate-[75deg] -translate-x-8 sm:-scale-y-100 sm:m-[3rem_7rem_0_0] sm:w-32 sm:h-32 xs:-translate-x-0"
+        />
+      </li>
+    </ol>
+  </div>
+</section>

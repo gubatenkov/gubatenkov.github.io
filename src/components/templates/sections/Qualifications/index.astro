@@ -1,0 +1,24 @@
+---
+import { qualifications } from '@/data'
+
+import CaseCard from './CaseCard.astro'
+---
+
+<section class="pb-16 pt-8 sm:pb-24 sm:pt-12 md:pt-16 lg:pt-16">
+  <div class="wrapper">
+    <h2 class="mb-4 text-center sm:mb-5">Check out my latest qualifications</h2>
+    <p class="mx-auto mb-16 max-w-md text-center text-lg">
+      Each qualification will help to create better experiences that inspire
+      other people and make their lives easier.
+    </p>
+    <ul class="mx-auto flex max-w-xl flex-col gap-16 lg:max-w-none">
+      {
+        qualifications.map((props) => (
+          <li>
+            <CaseCard {...props} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,81 @@
+---
+import Subscribe from '@/components/templates/sections/Subscribe.astro'
+import WorkCaseCard from '@/components/templates/WorkCaseCard.astro'
+import { SITE_DESCRIPTION, type Category, categories } from '@/data'
+import { type CollectionEntry, getCollection } from 'astro:content'
+import Layout from '@/layouts/MainLayout.astro'
+
+export async function getStaticPaths() {
+  const works = await getCollection('work')
+  return categories
+    .filter((category) => category.catId !== 'all')
+    .map((category) => {
+      const categoryWorks = works.filter(
+        ({ data }) => data.category === category.catId
+      )
+      return {
+        params: { slug: category.slug.replace('/', '') },
+        props: categoryWorks,
+      }
+    })
+}
+
+const getActiveClass = (slug: string) => {
+  switch (Astro.url.pathname) {
+    case `/work${slug}`:
+      return 'category-active'
+    case `/work${slug}/`:
+      return 'category-active'
+    default:
+      return 'category'
+  }
+}
+
+type Props = Record<string, CollectionEntry<'work'>>
+const worksCollection = Astro.props
+const works = Object.values(worksCollection)
+---
+
+<Layout title={`Work - Slava Developer`} description={SITE_DESCRIPTION}>
+  <section class="pb-28 pt-16 sm:pb-40 sm:pt-24 lg:pb-[13.5rem]">
+    <div class="wrapper max-w-3xl lg:max-w-7xl">
+      <h1 class="mx-auto mb-12 max-w-xl text-center xs:mb-14 lg:mb-16">
+        Working <span class="decorator-underline">projects</span>
+      </h1>
+      <ul
+        class="mx-auto mb-12 flex w-fit flex-wrap items-center justify-center gap-2 sm:mx-auto sm:mb-16 sm:gap-1 lg:mb-24 lg:gap-2"
+      >
+        {
+          categories.map(({ name, slug }: Category) => (
+            <li>
+              <a
+                class:list={['category', getActiveClass(slug)]}
+                href={`/work${slug}`}
+              >
+                {name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <ul
+        class="grid-col-1 mx-auto grid max-w-xl gap-12 lg:max-w-none lg:grid-cols-2 lg:gap-10 xl:gap-24 lg:[&>*:nth-child(even)]:translate-y-24"
+      >
+        {
+          works.map((work) => (
+            <li class="overflow-hidden [&_.card-img-link]:odd:mb-12 [&_.card-img-link]:even:order-4 [&_.card-img-link]:even:mb-0 [&_.card-img-link]:even:mt-12 [&_.card-img-link]:odd:sm:mb-14 [&_.card]:odd:rounded-tl-[4rem] [&_.card]:even:rounded-br-[4rem]">
+              <WorkCaseCard {...work} />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+  <section
+    class="relative w-full before:absolute before:left-0 before:right-0 before:top-0 before:block before:h-[50%] before:w-full before:bg-white after:absolute after:bottom-0 after:left-0 after:right-0 after:block after:h-[50%] after:w-full after:bg-zinc-900"
+  >
+    <div class="wrapper relative z-10">
+      <Subscribe />
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,34 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:astro/recommended",
+    "plugin:astro/jsx-a11y-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:perfectionist/recommended-line-length",
+    "eslint-config-prettier",
+    "prettier"
+  ],
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "overrides": [
+    {
+      "files": ["*.astro"],
+      "parser": "astro-eslint-parser",
+      "parserOptions": {
+        "ecmaVersion": "latest",
+        "extraFileExtensions": [".astro"],
+        "parser": "@typescript-eslint/parser"
+      },
+      "rules": {
+        // override/add rules settings here, such as:
+        // "astro/no-set-html-directive": "error"
+        "react/react-in-jsx-scope": "off"
+      }
+    }
+  ]
+}

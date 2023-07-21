@@ -1,0 +1,21 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+export interface Props extends HTMLAttributes<'img'> {
+  src: string
+  alt: string
+}
+const { src, alt, ...props } = Astro.props
+---
+
+<li
+  class="flex h-40 items-center justify-center border border-violet-100 sm:h-48"
+>
+  <img
+    class="relative z-20 w-full max-w-[6rem] shrink-0 xs:max-w-[8rem]"
+    decoding="async"
+    loading="lazy"
+    src={src}
+    alt={alt}
+    {...props}
+  />
+</li>

@@ -1,0 +1,52 @@
+@tailwind base;
+
+@layer base {
+  * {
+    outline-color: #5b21b6;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  canvas {
+    touch-action: none;
+  }
+
+  body {
+    color: rgb(var(--foreground-rgb));
+    overscroll-behavior-y: none;
+  }
+
+  h1 {
+    @apply font-lexend text-5xl font-semibold text-zinc-900 sm:text-6xl  sm:leading-[1.125];
+  }
+
+  h2 {
+    @apply font-lexend text-4xl font-semibold leading-[2.75rem] text-zinc-900 sm:text-5xl sm:leading-[1.125];
+  }
+
+  h3 {
+    @apply font-lexend text-xl font-semibold text-zinc-900 sm:leading-9;
+  }
+
+  h4 {
+    @apply font-lexend text-xl font-medium text-zinc-900;
+  }
+
+  p {
+    @apply font-inter text-base leading-7 text-zinc-700;
+  }
+
+  .wrapper {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8;
+  }
+
+  .absolute-center {
+    @apply left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%];
+  }
+
+  .background-plane {
+    @apply absolute inset-0 -z-10 h-[calc(100%+4rem)] w-[calc(100%+2rem)] translate-x-[-1rem] translate-y-[-4rem] bg-zinc-50 sm:h-[calc(100%+6rem)] sm:w-[calc(100%+3rem)] sm:translate-x-[-1.5rem] sm:translate-y-[-6rem] md:left-[50%] md:w-[calc(100%+(100vw-100%))] md:translate-x-[calc(-50%)] lg:bottom-0 lg:left-[unset] lg:right-0 lg:h-[calc(100%+8rem+4rem)] lg:w-[calc(150%+(100vw-76rem)/2)] lg:translate-x-8 lg:translate-y-[-8rem] lg:rounded-br-[4rem];
+  }
+}

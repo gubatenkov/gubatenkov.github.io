@@ -1,0 +1,77 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter/InterRegular.eot');
+  src: url('/fonts/Inter/InterRegular.eot') format('embedded-opentype'),
+    url('/fonts/Inter/InterRegular.woff2') format('woff2'),
+    url('/fonts/Inter/InterRegular.woff') format('woff'),
+    url('/fonts/Inter/InterRegular.ttf') format('truetype'),
+    url('/fonts/Inter/InterRegular.svg#InterRegular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter/InterMedium.eot');
+  src: url('/fonts/Inter/InterMedium.eot') format('embedded-opentype'),
+    url('/fonts/Inter/InterMedium.woff2') format('woff2'),
+    url('/fonts/Inter/InterMedium.woff') format('woff'),
+    url('/fonts/Inter/InterMedium.ttf') format('truetype'),
+    url('/fonts/Inter/InterMedium.svg#InterMedium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter/InterSemiBold.eot');
+  src: url('/fonts/Inter/InterSemiBold.eot') format('embedded-opentype'),
+    url('/fonts/Inter/InterSemiBold.woff2') format('woff2'),
+    url('/fonts/Inter/InterSemiBold.woff') format('woff'),
+    url('/fonts/Inter/InterSemiBold.ttf') format('truetype'),
+    url('/fonts/Inter/InterSemiBold.svg#InterSemiBold') format('svg');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lexend';
+  src: url('/fonts/Lexend/LexendMedium.eot');
+  src: url('/fonts/Lexend/LexendMedium.eot') format('embedded-opentype'),
+    url('/fonts/Lexend/LexendMedium.woff2') format('woff2'),
+    url('/fonts/Lexend/LexendMedium.woff') format('woff'),
+    url('/fonts/Lexend/LexendMedium.ttf') format('truetype'),
+    url('/fonts/Lexend/LexendMedium.svg#LexendMedium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lexend';
+  src: url('/fonts/Lexend/LexendSemiBold.eot');
+  src: url('/fonts/Lexend/LexendSemiBold.eot') format('embedded-opentype'),
+    url('/fonts/Lexend/LexendSemiBold.woff2') format('woff2'),
+    url('/fonts/Lexend/LexendSemiBold.woff') format('woff'),
+    url('/fonts/Lexend/LexendSemiBold.ttf') format('truetype'),
+    url('/fonts/Lexend/LexendSemiBold.svg#LexendSemiBold') format('svg');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GochiHand';
+  src: url('/fonts/GochiHand/GochiHandRegular.eot');
+  src: url('/fonts/GochiHand/GochiHandRegular.eot') format('embedded-opentype'),
+    url('/fonts/GochiHand/GochiHandRegular.woff2') format('woff2'),
+    url('/fonts/GochiHand/GochiHandRegular.woff') format('woff'),
+    url('/fonts/GochiHand/GochiHandRegular.ttf') format('truetype'),
+    url('/fonts/GochiHand/GochiHandRegular.svg#GochiHandRegular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

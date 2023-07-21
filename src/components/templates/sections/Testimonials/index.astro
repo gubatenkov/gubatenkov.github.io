@@ -1,0 +1,55 @@
+---
+import Navigation from '@/components/templates/sections/Testimonials/Navigation.astro'
+import Scrollbar from '@/components/templates/sections/Testimonials/Scrollbar.astro'
+import BrandCard from '@/components/templates/sections/Testimonials/BrandCard.astro'
+import ArrowSpin from '@/components/elements/ArrowSpin'
+import Slider from '@/components/islands/Slider'
+import { testimonials, brands } from '@/data'
+---
+
+<section class="overflow-hidden bg-zinc-50 py-20 sm:py-24 md:py-32">
+  <div class="wrapper mb-8 lg:mb-24">
+    <div
+      class="mx-auto flex max-w-xl flex-col gap-6 lg:max-w-none lg:flex-row lg:gap-16"
+    >
+      <div class="w-full lg:flex-[0.5]">
+        <h2>Here’s what real people are saying</h2>
+        <Scrollbar total={testimonials.length} />
+      </div>
+      <div
+        class="ml-auto flex w-full flex-1 flex-col justify-between lg:max-w-sm"
+      >
+        <p class="mb-14 pt-1 text-lg">
+          All of these reviews are real and references from people I have worked
+          with on various projects.
+        </p>
+        <Navigation />
+      </div>
+    </div>
+  </div>
+  <div class="relative mb-16 w-full sm:mb-20">
+    <div class="wrapper">
+      <Slider items={testimonials} client:visible />
+    </div>
+    <div
+      class="pointer-events-none absolute bottom-0 right-0 top-0 z-20 hidden w-64 bg-gradient-to-r from-zinc-50/0 to-zinc-50/80 lg:block"
+    >
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="mx-auto max-w-xl lg:max-w-none">
+      <h3
+        class="relative mb-12 max-w-[20rem] font-gochi text-[1.75rem] font-normal leading-10 tracking-wide text-zinc-600 sm:mb-14 sm:max-w-xs"
+      >
+        These are some places that help me
+        <span class="text-violet-700">grow</span>
+        <ArrowSpin
+          className="absolute right-0 top-0 hidden h-auto w-28 -translate-y-1 translate-x-[100%] text-zinc-600 sm:block"
+        />
+      </h3>
+      <ul class="grid grid-cols-1 gap-[0.625rem] xs:grid-cols-2 lg:grid-cols-5">
+        {brands.map((brandData) => <BrandCard {...brandData} />)}
+      </ul>
+    </div>
+  </div>
+</section>

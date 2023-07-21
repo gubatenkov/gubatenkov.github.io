@@ -1,0 +1,23 @@
+---
+import Inspiration from '@/components/templates/sections/Inspiration/index.astro'
+import Persona from '@/components/templates/sections/Persona/index.astro'
+import Subscribe from '@/components/templates/sections/Subscribe.astro'
+import Career from '@/components/templates/sections/Career/index.astro'
+import Gadgets from '@/components/templates/sections/Gadgets.astro'
+import Layout from '@/layouts/MainLayout.astro'
+import { SITE_DESCRIPTION } from '@/data'
+---
+
+<Layout title="About - Slava Developer" description={SITE_DESCRIPTION}>
+  <Persona />
+  <Career />
+  <Inspiration />
+  <Gadgets />
+  <section
+    class="relative w-full before:absolute before:left-0 before:right-0 before:top-0 before:block before:h-[50%] before:w-full before:bg-zinc-50 after:absolute after:bottom-0 after:left-0 after:right-0 after:block after:h-[50%] after:w-full after:bg-zinc-900"
+  >
+    <div class="wrapper relative z-10">
+      <Subscribe />
+    </div>
+  </section>
+</Layout>

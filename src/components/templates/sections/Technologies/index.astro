@@ -1,0 +1,52 @@
+---
+import ArrowStraight from '@/components/elements/ArrowStraight'
+import { technologies as data } from '@/data'
+
+/** @returns number from 0 to 100 */
+const translateByIndex = (index: number): number => {
+  const moveY = 50
+  const stretchY = 2
+  return Number((Math.sin(index - 1.25) * 100).toFixed()) / stretchY - moveY
+}
+---
+
+<section
+  class="relative hidden justify-center overflow-x-clip pb-14 pt-24 md:flex"
+>
+  <ul class="flex w-fit gap-16">
+    {
+      data.map(({ path, alt }, index) => (
+        <li
+          class={
+            (index === 0 || index === data.length - 1
+              ? 'opacity-50'
+              : 'opacity-100') +
+            ' inline-flex h-[5.5rem] w-[5.5rem] shrink-0 items-center justify-center rounded-full bg-zinc-100/90 shadow-sm shadow-sky-100 ring-1 ring-zinc-100' +
+            ` ${index === Math.floor(data.length / 2) ? 'animate-bounce' : ''}`
+          }
+          style={{
+            transform: `translateY(${translateByIndex(index)}%)`,
+          }}
+        >
+          <img
+            class="h-10 w-10"
+            decoding="async"
+            loading="lazy"
+            src={path}
+            alt={alt}
+          />
+        </li>
+      ))
+    }
+  </ul>
+  <div class="absolute -bottom-12 flex translate-x-[32rem] items-center gap-6">
+    <ArrowStraight
+      className="w-full max-w-[5.5rem] shrink-0 rotate-[30deg] scale-x-[-1] text-zinc-600"
+    />
+    <p
+      class="inline-block max-w-[12rem] translate-y-4 rotate-6 font-gochi text-2xl leading-8 text-zinc-600"
+    >
+      The tools I use on my day-to-day
+    </p>
+  </div>
+</section>

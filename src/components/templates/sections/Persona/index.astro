@@ -1,0 +1,58 @@
+---
+import { Picture } from 'astro-imagetools/components'
+import Ornament from '@/components/elements/Ornament'
+---
+
+<section
+  class="relative overflow-hidden bg-gradient-to-b from-zinc-50/50 via-zinc-50/50 to-violet-500/50 pt-16 sm:pt-24 lg:to-violet-500/10 lg:py-32"
+>
+  <div
+    class="wrapper grid grid-cols-1 gap-16 px-0 lg:grid-cols-[2fr_1fr] lg:gap-0 xl:gap-16"
+  >
+    <div class="relative z-10 px-4 sm:px-12">
+      <h1 class="mb-8 leading-[1.125]">
+        Yo, I'm <span class="decorator-underline">Slava</span> and I'm a Frontend
+        Developer
+      </h1>
+
+      <p class="text-lg leading-8">
+        Who always had a passion for technology, and I'm thrilled that I was
+        able to turn my passion into a profession. My journey started a few
+        years ago when I became fascinated with creating first web pages. Since
+        then, I have deepened my knowledge, mastered various frameworks, and
+        made the decision to become a specialist in this field. Every day, I
+        witness how the world is changing thanks to technology, and it inspires
+        me to strive for new heights.
+      </p>
+      <br />
+      <p class="text-lg leading-8">
+        Moreover, career of developer has its challenges. It's not always easy
+        to fix a new bug quickly or maintain communication with colleagues from
+        a distance. However, personality traits and modern technologies help to
+        solve these issues, and I'm ready to overcome any difficulties for the
+        sake of freedom and the opportunity to visit new places.
+      </p>
+      <br />
+      <p class="text-lg leading-8">
+        I'm looking forward to a future where I can combine my passion for
+        modern technologies with the unlimited freedom to travel. I believe that
+        what I'm doing now will gives me a chance to expand boundaries and
+        create something amazing, regardless of my location.
+      </p>
+    </div>
+    <div>
+      <div
+        class="relative aspect-[1/1.2] h-full xs:aspect-square sm:aspect-[2/1.25] lg:absolute lg:left-[calc((100%-80rem)/2+(0.8rem*66)+0.5rem)] lg:right-0 lg:aspect-auto lg:max-w-3xl lg:translate-y-[-8rem]"
+      >
+        <Picture
+          src="/images/about/placeholder-about.jpg"
+          layout="fill"
+          alt="img"
+        />
+        <Ornament
+          className="absolute hidden lg:block left-0 z-20 bottom-16 translate-x-[-50%]"
+        />
+      </div>
+    </div>
+  </div>
+</section>

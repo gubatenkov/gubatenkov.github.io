@@ -1,0 +1,22 @@
+---
+import type { MenuItem } from '@/data'
+export interface Props {
+  badge: MenuItem['badge']
+}
+const { badge }: Props = Astro.props
+---
+
+<li>
+  <p
+    class="relative inline-flex cursor-default items-center gap-1 px-2 text-base font-medium text-zinc-700"
+  >
+    <slot />
+    {
+      badge.visible && (
+        <span class="nav-tag inline-flex items-center rounded-full bg-violet-700 px-2 py-1 text-[0.625rem] font-normal leading-[0.75] text-white">
+          {badge.text}
+        </span>
+      )
+    }
+  </p>
+</li>

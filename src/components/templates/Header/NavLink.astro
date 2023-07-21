@@ -1,0 +1,38 @@
+---
+import type { MenuItem } from '@/data'
+export interface Props {
+  badge: MenuItem['badge']
+  url: string
+}
+const { badge, url, ...props }: Props = Astro.props
+const currentLinkClass =
+  'font-semibold after:absolute after:top-8 after:block after:h-[0.125rem] after:w-[calc(50%-0.5rem)] after:translate-x-[-50%] after:bg-zinc-700 after:left-[50%] text-zinc-900 hover:text-zinc-900'
+
+const getCurrentLinkClass = () => {
+  if (url === '/') {
+    return Astro.url.pathname === url && currentLinkClass
+  } else {
+    return Astro.url.pathname.includes(url) && currentLinkClass
+  }
+}
+---
+
+<li>
+  <a
+    class:list={[
+      'relative inline-flex items-center gap-1 text-base text-zinc-700 font-medium px-2 hover:text-violet-700',
+      getCurrentLinkClass(),
+    ]}
+    href={url}
+    {...props}
+  >
+    <slot />
+    {
+      badge.visible && (
+        <span class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+          {badge.text}
+        </span>
+      )
+    }
+  </a>
+</li>

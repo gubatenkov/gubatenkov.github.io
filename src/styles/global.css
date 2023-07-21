@@ -1,0 +1,44 @@
+@import './base.css';
+@import './fonts.css';
+@import './components.css';
+
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+.decorator-underline {
+  position: relative;
+}
+
+.decorator-underline::after {
+  content: '';
+  height: 100%;
+  display: inline-block;
+  width: calc(100% + 1rem);
+
+  bottom: -1rem;
+  left: -0.5rem;
+  right: -0.5rem;
+  position: absolute;
+
+  z-index: -1;
+
+  background: url('/images/icons/underline.svg') no-repeat center
+    calc(100% - 0.7rem);
+}
+
+.swiper-button-disabled {
+  opacity: 0.75;
+}

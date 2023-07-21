@@ -1,0 +1,28 @@
+---
+import type { ComponentProps, FC } from 'react'
+
+interface Props {
+  icon: FC<ComponentProps<'svg'>>
+  isLast: boolean
+  title: string
+  text: string
+}
+const { icon: Icon, isLast, title, text }: Props = Astro.props
+---
+
+<div class="relative flex items-start gap-4 lg:gap-8">
+  {
+    !isLast && (
+      <span class="absolute left-6 top-16 h-[calc(100%-1rem)] border border-dashed border-zinc-300 sm:left-7 sm:top-[4.35rem] md:left-8 md:top-20 md:h-[calc(100%-2rem)] lg:left-10 lg:top-24 lg:h-[calc(100%-3rem)]" />
+    )
+  }
+  <div
+    class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-zinc-900 shadow-lg sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-20 lg:w-20"
+  >
+    <Icon className="h-5 w-5 text-white lg:h-7 lg:w-7" />
+  </div>
+  <div>
+    <h3 class="mb-2 lg:mb-3">{title}</h3>
+    <p>{text}</p>
+  </div>
+</div>

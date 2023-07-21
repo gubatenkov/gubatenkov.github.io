@@ -1,0 +1,25 @@
+---
+import SubscribeForm from '@/components/forms/SubscribeForm'
+import Wave from '@/components/elements/Wave'
+---
+
+<div
+  class="relative grid grid-cols-1 items-center overflow-hidden rounded-2xl bg-gradient-to-r from-violet-400 to-violet-800 px-5 py-12 sm:px-16 sm:py-14 lg:grid-cols-2"
+>
+  <div
+    class="mx-auto mb-10 max-w-lg text-center md:max-w-2xl lg:mx-0 lg:mb-0 lg:text-left"
+  >
+    <h2 class="mb-4 text-white sm:mb-6">Subscribe to my newsletter</h2>
+    <p class="text-lg text-white">
+      Join the friendly community and get useful articles about development
+      straight to your inbox.
+    </p>
+  </div>
+  <SubscribeForm
+    apiRoute={import.meta.env.ASTRO_SUBSCRIBE_FORM_API}
+    client:visible
+  />
+  <Wave
+    className="pointer-events-none absolute bottom-0 w-full opacity-30 translate-y-[50%] xs:translate-y-[calc(50%+0.5rem)] sm:translate-y-[calc(50%+1rem)] md:translate-y-[calc(50%+2rem)]"
+  />
+</div>

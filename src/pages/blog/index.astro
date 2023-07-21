@@ -1,0 +1,37 @@
+---
+import FormattedDate from '@/components/templates/FormattedDate.astro'
+import Footer from '@/components/templates/Footer/index.astro'
+import Header from '@/components/templates/Header/index.astro'
+import BaseHead from '@/components/templates/BaseHead.astro'
+import { SITE_DESCRIPTION, SITE_TITLE } from '@/data'
+import { getCollection } from 'astro:content'
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+)
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead description={SITE_DESCRIPTION} title={SITE_TITLE} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section>
+        <ul>
+          {
+            posts.map((post) => (
+              <li>
+                <FormattedDate date={post.data.pubDate} />
+                <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

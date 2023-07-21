@@ -1,0 +1,44 @@
+---
+import type { CollectionEntry } from 'astro:content'
+
+import { Picture } from 'astro-imagetools/components'
+
+import LinkArrow from '../icons/LinkArrow'
+
+type Props = CollectionEntry<'work'>
+const {
+  data: { description, image, title, url },
+}: Props = Astro.props
+---
+
+<div
+  class="card flex flex-col rounded-3xl bg-zinc-50 px-6 py-12 text-center sm:p-16 lg:px-10 lg:py-14"
+>
+  <a
+    class="card-img-link group block aspect-[3/2] h-full overflow-hidden rounded-xl ring-1 ring-zinc-100/75"
+    rel="noopener noreferrer"
+    target="_blank"
+    href={url}
+  >
+    <div
+      class="h-full w-full transition-transform duration-200 group-hover:scale-105"
+    >
+      <Picture layout="fill" quality={80} src={image} alt={title} />
+    </div>
+  </a>
+  <h2 class="mb-6 text-3xl">{title}</h2>
+  <p class="mb-10 line-clamp-6 leading-8 xs:mb-12">
+    {description}
+  </p>
+  <a
+    class="btn group mx-auto inline-flex w-fit items-center gap-2 bg-white px-9 font-medium leading-6 text-violet-900 shadow-sm shadow-violet-50/50 ring-1 ring-zinc-100/90 hover:shadow-md hover:shadow-violet-50"
+    rel="noopener noreferrer"
+    target="_blank"
+    href={url}
+  >
+    <span class="inline-block">View Case Study</span>
+    <LinkArrow
+      className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200 ease-in-out"
+    />
+  </a>
+</div>

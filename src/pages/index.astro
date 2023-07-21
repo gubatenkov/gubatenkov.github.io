@@ -1,0 +1,25 @@
+---
+import Qualifications from '@/components/templates/sections/Qualifications/index.astro'
+import Testimonials from '@/components/templates/sections/Testimonials/index.astro'
+import Technologies from '@/components/templates/sections/Technologies/index.astro'
+import Advantages from '@/components/templates/sections/Advantages/index.astro'
+import Subscribe from '@/components/templates/sections/Subscribe.astro'
+import Hero from '@/components/templates/sections/Hero.astro'
+import { SITE_DESCRIPTION, SITE_TITLE } from '@/data'
+import Layout from '@/layouts/MainLayout.astro'
+---
+
+<Layout description={SITE_DESCRIPTION} title={SITE_TITLE}>
+  <Hero />
+  <Advantages />
+  <Technologies />
+  <Qualifications />
+  <Testimonials />
+  <section
+    class="relative w-full before:absolute before:left-0 before:right-0 before:top-0 before:block before:h-[50%] before:w-full before:bg-zinc-50 after:absolute after:bottom-0 after:left-0 after:right-0 after:block after:h-[50%] after:w-full after:bg-zinc-900"
+  >
+    <div class="wrapper relative z-10">
+      <Subscribe />
+    </div>
+  </section>
+</Layout>

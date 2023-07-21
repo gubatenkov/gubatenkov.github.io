@@ -1,0 +1,87 @@
+---
+import LinkArrow from '@/components/icons/LinkArrow'
+import { socials, menu } from '@/data'
+
+import IconLink from '../IconLink.astro'
+import NavText from './NavText.astro'
+import NavLink from './NavLink.astro'
+import Link from '../Link.astro'
+const date = new Date()
+---
+
+<footer class="bg-zinc-900 pb-8 pt-20 sm:pb-12 sm:pt-24 lg:pb-12 lg:pt-32">
+  <section>
+    <div class="wrapper">
+      <div
+        class="mx-auto grid grid-cols-1 gap-16 md:max-w-xl lg:max-w-none lg:grid-cols-[1.15fr_0.85fr]"
+      >
+        <div
+          class="mx-auto text-center lg:mx-0 lg:mr-auto lg:max-w-xl lg:text-left"
+        >
+          <h2 class="mb-6 text-white lg:mb-12">
+            Let's make the next project together
+          </h2>
+          <p
+            class="mx-auto mb-10 w-full max-w-sm text-lg text-white md:max-w-none lg:mb-8 lg:hidden"
+          >
+            Connect me through social networks. Always happy to meet new people
+          </p>
+          <Link
+            class="inline-flex items-center gap-2 bg-white px-7 py-2.5 font-bold text-zinc-900 hover:bg-violet-50 focus:outline-zinc-900"
+            href={import.meta.env.ASTRO_CTA_URL}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>Discuss details</span>
+            <LinkArrow
+              className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200 ease-in-out"
+            />
+          </Link>
+        </div>
+        <div class="ml-auto w-full lg:max-w-[28.75rem]">
+          <p class="mb-8 hidden w-full max-w-sm text-lg text-white lg:block">
+            Connect me through social networks. Always happy to meet new people
+          </p>
+          <ul
+            class="mx-auto grid h-fit w-full max-w-sm grid-cols-2 gap-[0.875rem] sm:max-w-none sm:grid-cols-3"
+          >
+            {
+              socials.map(({ icon: Icon, text, url }) => (
+                <li>
+                  <IconLink
+                    class="w-full gap-2 border-zinc-600 py-[0.625rem] hover:bg-zinc-800 focus:border-white focus:outline-white"
+                    href={url}
+                  >
+                    <Icon className="h-4 w-4 text-zinc-50" />
+                    <span class="inline-block text-sm text-zinc-50">
+                      {text}
+                    </span>
+                  </IconLink>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+      <hr class="mb-6 mt-12 border-t border-zinc-600 sm:mb-10 sm:mt-16" />
+      <div class="flex flex-col items-center justify-between gap-8 md:flex-row">
+        <nav>
+          <ul class="flex items-center">
+            {
+              menu.map(({ isActive, text, url }) =>
+                isActive ? (
+                  <NavLink href={url}>{text}</NavLink>
+                ) : (
+                  <NavText>{text}</NavText>
+                )
+              )
+            }
+          </ul>
+        </nav>
+        <p class="text-zinc-400">
+          &copy; {date.getFullYear()} Freedom Inc. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </section>
+</footer>

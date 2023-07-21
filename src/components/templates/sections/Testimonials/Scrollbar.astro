@@ -1,0 +1,14 @@
+---
+interface Props {
+  total: number
+}
+const { total }: Props = Astro.props
+---
+
+<div class="mt-16 hidden h-[0.375rem] w-full rounded-full bg-zinc-200 lg:block">
+  <div
+    class="swiper-scrollbar h-full rounded-full bg-black transition-all duration-200"
+    style={`width: ${100 / total}%`}
+  >
+  </div>
+</div>

@@ -1,0 +1,28 @@
+---
+import { inspirations } from '@/data'
+
+import InspirationListItem from './InspirationListItem.astro'
+---
+
+<section class="bg-zinc-900 py-16 sm:py-24 lg:py-32">
+  <div class="wrapper">
+    <h2 class="mb-6 text-center text-white">
+      Inspiration and sources of ideas
+    </h2>
+    <p class="mx-auto mb-14 max-w-lg text-center text-lg text-white md:mb-20">
+      Can play a key role in creating something beautiful and stunning
+    </p>
+    <ul class="relative grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
+      {
+        inspirations.map(({ companyName, logoPath }) => (
+          <InspirationListItem alt={`Logo of ${companyName}`} src={logoPath} />
+        ))
+      }
+      <li>
+        <span
+          class="absolute inset-0 z-10 h-full w-full overflow-hidden bg-gradient-radial from-zinc-900/25 via-zinc-900/95 to-zinc-900"
+        ></span>
+      </li>
+    </ul>
+  </div>
+</section>
