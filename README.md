@@ -1,40 +1,65 @@
-# Astro Starter Kit: Blog
+# Astro Portfolio
+
+To start localy:
 
 ```
-npm create astro@latest -- --template blog
+yarn install && yarn dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+To start with Docker:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+1. Build container by running the following command in project’s root directory:
 
-![blog](https://user-images.githubusercontent.com/4677417/186189140-4ef17aac-c3c9-4918-a8c2-ce86ba1bb394.png)
+```
+docker build -t <your-astro-image-name> .
+```
+
+2. To run image as a local container, use the following command:
+
+```
+docker run -p <local-port>:<container-port> <your-astro-image-name>
+```
+
+3. Now that website is successfully built and packaged in a container, you can deploy it to a cloud provider.
 
 Features:
 
-- ✅ Minimal styling (make it your own!)
+- ✅ Clean design
 - ✅ 100/100 Lighthouse performance
 - ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+- ✅ Sitemap
+- ✅ RSS Feed
+- ✅ Markdown/MDX
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+Inside of project, you'll see the following folders and files:
 
 ```
+├── .github/
+├── .vscode/
+├── nginx/
 ├── public/
 ├── src/
 │   ├── components/
 │   ├── content/
 │   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
+│   ├── pages/
+│   ├── styles/
+│   ├── utils/
+│   ├── data.ts
+│   └── env.d.ts
+├── .env.example
+├── .eslintrc.json
+├── .gitignore
+├── .prettierignore
+├── .prettierrc.json
+├── astro-imagetools.config.mjs
+├── astro.config.ts
+├── Dockerfile
 ├── package.json
+├── README.md
+├── tailwind.config.cjs
 └── tsconfig.json
 ```
 
@@ -50,19 +75,14 @@ Any static assets, like images, can be placed in the `public/` directory.
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:3000`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Command                    | Action                                           |
+| :------------------------- | :----------------------------------------------- |
+| `yarn install`             | Installs dependencies                            |
+| `yarn dev`                 | Starts local dev server at `localhost:3000`      |
+| `yarn build`               | Build your production site to `./dist/`          |
+| `yarn preview`             | Preview your build locally, before deploying     |
+| `yarn lint`                | Validate project files                           |
+| `yarn run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `yarn run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+P.S. Have fun 😎
