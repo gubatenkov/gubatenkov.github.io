@@ -377,7 +377,7 @@ export const qualifications = [
     },
     followUrl: 'https://www.totaltypescript.com/',
     title: 'TotalTypescript',
-    tag: 'Development',
+    tag: 'Course',
     id: 0,
   },
   {
@@ -389,7 +389,7 @@ export const qualifications = [
     },
     followUrl: 'https://threejs-journey.com/',
     title: 'Three.js Journey',
-    tag: 'Development',
+    tag: 'Course',
     id: 1,
   },
   {
@@ -401,7 +401,7 @@ export const qualifications = [
     },
     followUrl: 'https://www.udemy.com/course/react-three-fiber/',
     title: 'React Three Fiber',
-    tag: 'Udemy Certification',
+    tag: 'Certification',
     id: 2,
   },
 ]

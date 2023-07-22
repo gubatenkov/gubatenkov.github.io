@@ -14,9 +14,9 @@ const { description, followUrl, image, title, tag } = Astro.props
 >
   <div class="lg:py-16 lg:pl-12 xl:pb-24 xl:pl-16 xl:pt-8">
     <p
-      class="mb-5 inline-flex items-center gap-2 text-sm text-violet-900 sm:mb-6 sm:text-base"
+      class="mb-5 inline-flex items-center gap-2 text-sm font-medium text-violet-900 sm:mb-6 sm:text-base"
     >
-      <CursorIcon className="h-4 w-4" />
+      <CursorIcon className="h-4 w-4 translate-y-[0.125rem] lg:translate-y-0" />
       <span>{tag}</span>
     </p>
     <h3 class="mb-4 text-2xl sm:text-3xl">{title}</h3>

@@ -12,16 +12,16 @@ const {
 ---
 
 <div
-  class="card flex flex-col rounded-3xl bg-zinc-50 px-6 py-12 text-center sm:p-16 lg:px-10 lg:py-14"
+  class="card flex h-full w-full flex-col rounded-3xl bg-zinc-50 px-6 py-12 text-center sm:p-16 lg:px-10 lg:py-14"
 >
   <a
-    class="card-img-link group block aspect-[3/2] h-full overflow-hidden rounded-xl ring-1 ring-zinc-100/75"
+    class="card-img-link group block h-fit overflow-hidden rounded-xl ring-1 ring-zinc-100/75"
     rel="noopener noreferrer"
     target="_blank"
     href={url}
   >
     <div
-      class="h-full w-full transition-transform duration-200 group-hover:scale-105"
+      class="aspect-[3/2] transition-transform duration-200 group-hover:scale-105"
     >
       <Picture layout="fill" quality={80} src={image} alt={title} />
     </div>
