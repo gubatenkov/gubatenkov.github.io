@@ -15,9 +15,9 @@ const Scene = () => {
   return (
     <Suspense fallback={null}>
       <Canvas
-        className="canvas aspect-[1/0.9] touch-none lg:!absolute lg:left-[50%] lg:top-0 lg:aspect-auto lg:!h-full lg:!w-full lg:max-w-3xl lg:translate-x-[calc(-50%+18rem)]"
+        className="canvas aspect-square touch-none lg:!absolute lg:left-[50%] lg:top-0 lg:aspect-auto lg:!h-full lg:!w-full lg:max-w-3xl lg:translate-x-[calc(-50%+18rem)]"
         gl={{ toneMapping: NoToneMapping, antialias: true }}
-        dpr={[1, 2]}
+        dpr={2}
       >
         <Camera />
 
