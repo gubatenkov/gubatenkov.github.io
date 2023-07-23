@@ -10,7 +10,7 @@ import mdx from '@astrojs/mdx'
 // https://astro.build/config
 export default defineConfig({
   integrations: [astroImageTools, mdx(), react(), tailwind(), sitemap()],
-  site: 'https://sokolenkov.github.com',
+  site: 'https://sokolenkov.github.io',
   vite: {
     plugins: [glsl()],
   },
