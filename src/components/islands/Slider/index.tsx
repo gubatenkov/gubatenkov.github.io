@@ -31,8 +31,8 @@ const Slider: FC<Props> = ({ items }) => {
       onSlideChange={handleSlideChange}
       className="!overflow-visible"
       slidesPerView="auto"
+      wrapperTag="ul"
       grabCursor
-      tag="ul"
     >
       {items.map((props) => (
         <SwiperSlide

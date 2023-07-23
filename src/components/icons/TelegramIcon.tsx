@@ -2,7 +2,7 @@ import type { ComponentProps, FC } from 'react'
 
 const TelegramIcon: FC<ComponentProps<'svg'>> = (props) => {
   return (
-    <svg {...props} viewBox="0 0 100 100" version="1.0">
+    <svg {...props} viewBox="0 0 100 100">
       <path
         d="M84.16,14.148l-71.047,29.57c0,0-3.359,1.221-3.099,3.473c0.267,2.256,3.008,3.288,3.008,3.288l17.877,6.382
         c0,0,5.396,18.772,6.458,22.344c1.062,3.562,1.914,3.646,1.914,3.646c0.989,0.456,1.888-0.27,1.888-0.27l11.55-11.169L70.71,86.054

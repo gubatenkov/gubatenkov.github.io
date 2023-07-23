@@ -1,7 +1,12 @@
 import type { ComponentProps, FC } from 'react'
 
 const HtmlIcon: FC<ComponentProps<'svg'>> = (props) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="-30 0 512 512">
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="-30 0 512 512"
+    version="1.0"
+  >
     <path
       d="m0 0 31.800781 448.101562 194.398438 63.898438 194.398437-63.898438 31.800782-448.101562zm0 0"
       fill="#ff7816"
