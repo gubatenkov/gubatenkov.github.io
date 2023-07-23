@@ -9,7 +9,11 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '@/data'
 import Layout from '@/layouts/MainLayout.astro'
 ---
 
-<Layout description={SITE_DESCRIPTION} title={SITE_TITLE}>
+<Layout
+  image="/images/previews/preview-home.jpg"
+  description={SITE_DESCRIPTION}
+  title={SITE_TITLE}
+>
   <Hero />
   <Advantages />
   <Technologies />

@@ -6,15 +6,16 @@ import BaseHead from '@/components/templates/BaseHead.astro'
 interface Props {
   description: string
   title: string
+  image: string
 }
-const { description, title }: Props = Astro.props
+const { description, title, image }: Props = Astro.props
 const { pathname } = Astro.url
 const isHomepage = pathname === '/'
 ---
 
 <html lang="en">
   <head>
-    <BaseHead description={description} title={title} />
+    <BaseHead description={description} title={title} image={image} />
   </head>
   <body class="overflow-x-hidden">
     <Header class={isHomepage ? 'animate-fade-down animate-delay-100' : ''} />

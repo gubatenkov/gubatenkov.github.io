@@ -5,7 +5,11 @@ import Layout from '@/layouts/MainLayout.astro'
 import { SITE_DESCRIPTION } from '@/data'
 ---
 
-<Layout title="Contact - Frontend Developer" description={SITE_DESCRIPTION}>
+<Layout
+  image="/images/previews/preview-contact.jpg"
+  title="Contact - Frontend Developer"
+  description={SITE_DESCRIPTION}
+>
   <ContactSection />
   <section
     class="relative w-full before:absolute before:left-0 before:right-0 before:top-0 before:block before:h-[50%] before:w-full before:bg-white after:absolute after:bottom-0 after:left-0 after:right-0 after:block after:h-[50%] after:w-full after:bg-zinc-900"

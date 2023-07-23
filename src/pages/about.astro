@@ -8,7 +8,11 @@ import Layout from '@/layouts/MainLayout.astro'
 import { SITE_DESCRIPTION } from '@/data'
 ---
 
-<Layout title="About - Slava Developer" description={SITE_DESCRIPTION}>
+<Layout
+  image="/images/previews/preview-about.jpg"
+  title="About - Slava Developer"
+  description={SITE_DESCRIPTION}
+>
   <Persona />
   <Career />
   <Inspiration />

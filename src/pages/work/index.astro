@@ -8,7 +8,11 @@ import { getCollection } from 'astro:content'
 const works = await getCollection('work')
 ---
 
-<Layout title={'Work - Slava Developer'} description={SITE_DESCRIPTION}>
+<Layout
+  image="/images/previews/preview-work.jpg"
+  title={'Work - Slava Developer'}
+  description={SITE_DESCRIPTION}
+>
   <section class="pb-28 pt-16 sm:pb-40 sm:pt-24 lg:pb-[13.5rem]">
     <div class="wrapper max-w-3xl lg:max-w-7xl">
       <h1 class="mx-auto mb-12 max-w-xl text-center xs:mb-14 lg:mb-16">
