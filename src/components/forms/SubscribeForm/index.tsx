@@ -81,10 +81,10 @@ const SubscribeForm: FC<Props> = ({ apiRoute, ...formProps }) => {
     >
       <input
         className={
-          'block w-full rounded-full bg-white/10 px-6 py-4 text-sm leading-5 text-violet-50 outline-none ring-1 backdrop-blur transition-all duration-200 placeholder:text-violet-50 focus:ring-2 sm:py-[1.125rem] sm:pr-[8.5rem] ' +
+          'block w-full rounded-full bg-white/10 px-6 py-4 text-sm leading-5 text-violet-50 outline-none ring-1 backdrop-blur transition-all duration-200 placeholder:text-violet-50 focus-visible:ring-2 sm:py-[1.125rem] sm:pr-[8.5rem] ' +
           (errors.email
-            ? 'ring-red-500 focus:ring-red-500'
-            : 'ring-white/30 focus:ring-white/30')
+            ? 'ring-red-500 focus-visible:ring-red-500'
+            : 'ring-white/30 focus-visible:ring-white/30')
         }
         placeholder="Enter your email"
         {...register('email', validators.email)}
@@ -101,7 +101,7 @@ const SubscribeForm: FC<Props> = ({ apiRoute, ...formProps }) => {
         </span>
       )}
       <button
-        className="right-[0.375rem] top-[50%] flex items-center justify-center rounded-full bg-violet-900 px-7 py-4 text-sm text-white outline outline-2 outline-offset-2 outline-transparent transition-colors duration-200 hover:bg-violet-800 focus:outline-violet-900 sm:absolute sm:-translate-y-[50%] sm:py-2.5 sm:text-base"
+        className="right-[0.375rem] top-[50%] flex items-center justify-center rounded-full bg-violet-900 px-7 py-4 text-sm text-white outline outline-2 outline-offset-2 outline-transparent transition-colors duration-200 hover:bg-violet-800 focus-visible:outline-violet-900 sm:absolute sm:-translate-y-[50%] sm:py-2.5 sm:text-base"
         disabled={submitStatus.status !== 'editing'}
         type="submit"
       >

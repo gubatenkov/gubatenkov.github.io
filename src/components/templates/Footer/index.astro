@@ -27,7 +27,7 @@ const date = new Date()
             Connect me through social networks. Always happy to meet new people
           </p>
           <Link
-            class="inline-flex items-center gap-2 bg-white px-7 py-2.5 font-bold text-zinc-900 hover:bg-violet-50 focus:outline-zinc-900"
+            class="inline-flex items-center gap-2 bg-white px-7 py-2.5 font-bold text-zinc-900 hover:bg-violet-50 focus-visible:outline-zinc-900"
             href={import.meta.env.ASTRO_CTA_URL}
             rel="noopener noreferrer"
             target="_blank"
@@ -49,7 +49,7 @@ const date = new Date()
               socials.map(({ icon: Icon, text, url }) => (
                 <li>
                   <IconLink
-                    class="w-full gap-2 border-zinc-600 py-[0.625rem] hover:bg-zinc-800 focus:border-white focus:outline-white"
+                    class="w-full gap-2 border-zinc-600 py-[0.625rem] hover:bg-zinc-800 focus-visible:border-white focus-visible:outline-white"
                     href={url}
                   >
                     <Icon className="h-4 w-4 text-zinc-50" />

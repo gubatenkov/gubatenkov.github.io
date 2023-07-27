@@ -65,14 +65,14 @@ import AdvantagesItem from './AdvantagesItem.astro'
           className="absolute left-[calc(50%-3rem)] top-[calc(50%-3rem)] z-20 h-24 w-24 animate-[spin_12s_linear_infinite] text-zinc-900 lg:left-[calc(50%-4.5rem)] lg:top-[calc(50%-4.5rem)] lg:h-36 lg:w-36"
         />
         <a
-          class="absolute-center group absolute left-[50%] top-[50%] z-30 h-12 w-12 rounded-full bg-zinc-900 text-white outline outline-2 outline-offset-2 outline-transparent hover:bg-zinc-800 focus:outline-zinc-800 lg:h-20 lg:w-20"
+          class="absolute-center group absolute left-[50%] top-[50%] z-30 h-12 w-12 rounded-full bg-zinc-900 text-white outline outline-2 outline-offset-2 outline-transparent hover:bg-zinc-800 focus-visible:outline-zinc-800 lg:h-20 lg:w-20"
           href={import.meta.env.ASTRO_DOWNLOAD_CV_URL}
           aria-label="Download Frontend Developer CV"
           rel="noopener noreferrer"
           target="_blank"
         >
           <DownloadIcon
-            className="group-focus:animate-pulse absolute-center absolute h-5 w-5 lg:h-7 lg:w-7 duration-200 ease-in-out"
+            className="group-focus-visible:animate-pulse absolute-center absolute h-5 w-5 lg:h-7 lg:w-7 duration-200 ease-in-out"
           />
         </a>
         <Star

@@ -14,7 +14,7 @@ const MobileMenu: FC<{ items: Menu }> = ({ items }) => {
           <Popover.Button
             className={`${
               open ? 'open' : 'closed'
-            } header-toggle-btn group relative z-20 ml-auto flex h-auto w-10 flex-col justify-between gap-1 rounded-full bg-zinc-100/80 px-3 py-[0.8125rem] shadow-sm shadow-violet-100/50 outline-none ring-1 ring-zinc-900/[0.05] focus:outline-violet-800 md:hidden`}
+            } header-toggle-btn group relative z-20 ml-auto flex h-auto w-10 flex-col justify-between gap-1 rounded-full bg-zinc-100/80 px-3 py-[0.8125rem] shadow-sm shadow-violet-100/50 outline-none ring-1 ring-zinc-900/[0.05] focus-visible:outline-violet-800 md:hidden`}
             tabIndex={0}
           >
             <span className="hamburger-line-1" />

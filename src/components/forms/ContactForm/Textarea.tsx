@@ -26,7 +26,7 @@ const Textarea: FC<Props> = ({
         {label}
       </label>
       <textarea
-        className={`w-full rounded-xl border-none bg-zinc-50 p-4 text-sm leading-4 text-zinc-900 shadow-md shadow-zinc-100 outline-none ring-1 transition-all duration-200 ease-in-out focus:bg-white focus:ring-2 ${className}`}
+        className={`w-full rounded-xl border-none bg-zinc-50 p-4 text-sm leading-4 text-zinc-900 shadow-md shadow-zinc-100 outline-none ring-1 transition-all duration-200 ease-in-out focus-visible:bg-white focus-visible:ring-2 ${className}`}
         {...register}
         id={inputId}
         {...props}

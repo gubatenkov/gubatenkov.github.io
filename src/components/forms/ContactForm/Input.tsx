@@ -21,7 +21,7 @@ const Input: FC<Props> = ({ className, register, error, label, ...props }) => {
         {label}:
       </label>
       <input
-        className={`rounded-xl border-none bg-zinc-50 p-4 text-sm leading-4 text-zinc-900 shadow-md shadow-zinc-100 outline-none ring-1 transition-all duration-200 ease-in-out autofill:shadow-[inset_0_0_0px_100px_rgb(245,243,255)] focus:bg-white focus:ring-2 ${className}`}
+        className={`rounded-xl border-none bg-zinc-50 p-4 text-sm leading-4 text-zinc-900 shadow-md shadow-zinc-100 outline-none ring-1 transition-all duration-200 ease-in-out autofill:shadow-[inset_0_0_0px_100px_rgb(245,243,255)] focus-visible:bg-white focus-visible:ring-2 ${className}`}
         {...register}
         id={inputId}
         {...props}

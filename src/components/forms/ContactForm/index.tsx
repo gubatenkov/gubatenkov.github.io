@@ -88,8 +88,8 @@ const ContactForm: FC<Props> = ({ apiRoute, ...formProps }) => {
         className={
           'mb-7 ' +
           (errors.name
-            ? 'ring-red-500 focus:ring-red-500'
-            : 'ring-zinc-200 focus:ring-violet-600/60')
+            ? 'ring-red-500 focus-visible:ring-red-500'
+            : 'ring-zinc-200 focus-visible:ring-violet-600/60')
         }
         register={{
           ...register('name', validators.name),
@@ -105,8 +105,8 @@ const ContactForm: FC<Props> = ({ apiRoute, ...formProps }) => {
         className={
           'mb-7 ' +
           (errors.email
-            ? 'ring-red-500 focus:ring-red-500'
-            : 'ring-zinc-200 focus:ring-violet-600/60')
+            ? 'ring-red-500 focus-visible:ring-red-500'
+            : 'ring-zinc-200 focus-visible:ring-violet-600/60')
         }
         register={{
           ...register('email', validators.email),
@@ -122,8 +122,8 @@ const ContactForm: FC<Props> = ({ apiRoute, ...formProps }) => {
         className={
           'min-h-[10rem] ' +
           (errors.message
-            ? 'ring-red-500 focus:ring-red-500'
-            : 'ring-zinc-200 focus:ring-violet-600/60')
+            ? 'ring-red-500 focus-visible:ring-red-500'
+            : 'ring-zinc-200 focus-visible:ring-violet-600/60')
         }
         register={{ ...register('message', validators.message) }}
         placeholder="Tell me a little bit about your project..."
@@ -134,7 +134,7 @@ const ContactForm: FC<Props> = ({ apiRoute, ...formProps }) => {
       />
       <hr className="mb-8 mt-10 border-t border-zinc-200" />
       <button
-        className="btn w-full justify-center bg-zinc-900 leading-7 text-white hover:bg-violet-800 focus:outline-zinc-900 sm:text-lg"
+        className="btn w-full justify-center bg-zinc-900 leading-7 text-white hover:bg-violet-800 focus-visible:outline-zinc-900 sm:text-lg"
         disabled={submitStatus.status !== 'editing'}
         type="submit"
       >
