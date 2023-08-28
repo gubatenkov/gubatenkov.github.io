@@ -1,7 +1,7 @@
 ---
 import Header from '@/components/templates/Header/index.astro'
 import BaseHead from '@/components/templates/BaseHead.astro'
-import BlackHole from '@/components/islands/BlackHole/Scene'
+import Galaxy from '@/components/islands/Galaxy/Scene'
 ---
 
 <html class="h-full w-full bg-black" lang="en">
@@ -24,15 +24,19 @@ import BlackHole from '@/components/islands/BlackHole/Scene'
         >
           <button
             class="btn h-11 w-full justify-center border border-zinc-900 bg-transparent text-zinc-900 hover:bg-zinc-900 hover:text-white focus-visible:outline-zinc-900 xs:w-fit"
-            onclick="history.back()">Go Back</button
+            onclick="history.back()"
           >
+            Go Back
+          </button>
           <a
             class="btn h-11 w-full justify-center border border-transparent bg-zinc-900 text-white hover:border-zinc-900 hover:bg-transparent hover:bg-opacity-70 hover:text-zinc-900 focus-visible:outline-zinc-900 xs:w-fit"
-            href="/">Take me home</a
+            href="/"
           >
+            Take me home
+          </a>
         </div>
       </div>
     </main>
-    <BlackHole className="!fixed inset-0 z-[-1]" client:only="react" />
+    <Galaxy className="!fixed inset-0 z-[-1]" client:only="react" />
   </body>
 </html>
