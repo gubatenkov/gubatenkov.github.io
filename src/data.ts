@@ -90,7 +90,7 @@ export const socials = [
     url: 'https://github.com/gubatenkov',
     icon: GithubIcon,
     text: 'Github',
-    id: 4,
+    id: 5,
   },
 ]
 export type TSocial = GetArrayItem<typeof socials>
