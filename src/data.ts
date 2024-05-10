@@ -45,11 +45,11 @@ export const menu = [
   },
   {
     badge: {
-      visible: true,
+      visible: false,
       text: 'soon',
     },
     isActive: false,
-    url: '/blog',
+    url: 'https://gubatenkov.pages.dev/',
     text: 'Blog',
     id: 4,
   },
@@ -69,7 +69,7 @@ export type MenuItem = GetArrayItem<typeof menu>
 
 export const socials = [
   {
-    url: 'mailto:s9379992g@gmail.com',
+    url: 'mailto:gubatenkov@icloud.com',
     text: 'Email me',
     icon: MailIcon,
     id: 1,
