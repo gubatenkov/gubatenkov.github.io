@@ -1,4 +1,4 @@
-// import { vitePlugin as utwm } from 'unplugin-tailwindcss-mangle'
+import { vitePlugin as utwm } from 'unplugin-tailwindcss-mangle'
 import { astroImageTools } from 'astro-imagetools'
 import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
@@ -12,6 +12,6 @@ export default defineConfig({
   integrations: [astroImageTools, mdx(), react(), tailwind(), sitemap()],
   site: 'https://gubatenkov.github.io',
   vite: {
-    plugins: [glsl()],
+    plugins: [glsl(), utwm()],
   },
 })
