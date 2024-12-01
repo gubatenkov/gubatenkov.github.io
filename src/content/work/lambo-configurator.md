@@ -4,5 +4,5 @@ description: 'The goal of the project is to gain a deeper understanding of the b
 title: '3D Configurator'
 pubDate: 'Jun 21 2023'
 category: 'three'
-url: 'https://3d-configurator-au8.pages.dev/'
+url: 'https://lamborghini-configurator.pages.dev/'
 ---
