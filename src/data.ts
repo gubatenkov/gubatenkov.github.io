@@ -75,19 +75,19 @@ export const socials = [
     id: 1,
   },
   {
-    url: 'https://www.linkedin.com/in/gubatenkov/',
+    url: 'https://www.linkedin.com/in/tenkkov/',
     icon: LinkedInIcon,
     text: 'LinkedIn',
     id: 2,
   },
   {
-    url: 'https://t.me/gubatenkov',
+    url: 'https://t.me/tenkkov',
     icon: TelegramIcon,
     text: 'Telegram',
     id: 3,
   },
   {
-    url: 'https://github.com/gubatenkov',
+    url: 'https://github.com/tenkkov',
     icon: GithubIcon,
     text: 'Github',
     id: 5,
