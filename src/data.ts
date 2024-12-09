@@ -5,7 +5,7 @@ import TelegramIcon from '@/components/icons/TelegramIcon'
 import GithubIcon from '@/components/icons/GithubIcon'
 import BrushIcon from '@/components/icons/BrushIcon'
 import MailIcon from '@/components/icons/MailIcon'
-
+ 
 export type GetArrayItem<T extends readonly unknown[]> = T[number]
 
 export const SITE_TITLE = 'Slava - Frontend Developer'
