@@ -49,7 +49,7 @@ export const menu = [
       text: 'soon',
     },
     isActive: true,
-    url: 'https://gubatenkov.pages.dev',
+    url: 'https://tenkkov.pages.dev',
     text: 'Blog',
     id: 4,
   },
@@ -69,7 +69,7 @@ export type MenuItem = GetArrayItem<typeof menu>
 
 export const socials = [
   {
-    url: 'mailto:gubatenkov@icloud.com',
+    url: 'mailto:tenkkov@icloud.com',
     text: 'Email me',
     icon: MailIcon,
     id: 1,
